@@ -27,7 +27,7 @@
 
 .holy-grail-grid > .pos-sidebar {
   grid-area: pos-sidebar;
-  background: var(--positive-info);  
+  background: var(--positive-info);
 }
 
 .holy-grail-grid > .main-content {

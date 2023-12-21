@@ -1,1 +1,7 @@
-<app-card></app-card>
+<div class="cards">
+  @for (card of cardItems; track card.name) {
+  <app-card [cardInfo]="card"></app-card>
+  } @empty {
+  <p>There are no items.</p>
+  }
+</div>

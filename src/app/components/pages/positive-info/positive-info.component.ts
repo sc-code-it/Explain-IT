@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CardComponent } from '../../ui/card/card.component';
+import { CardComponent, CardInfo } from '../../ui/card/card.component';
 
 @Component({
   selector: 'app-positive-info',
@@ -9,5 +9,10 @@ import { CardComponent } from '../../ui/card/card.component';
   styleUrl: './positive-info.component.css'
 })
 export class PositiveInfoComponent {
-
+  cardItems: CardInfo[] = [
+    {name: 'Yes', type: 'p'},
+    {name: 'Family', type: 'p'},
+    {name: 'Food', type: 'p'},
+    {name: 'Drink', type: 'p'},
+  ] 
 }

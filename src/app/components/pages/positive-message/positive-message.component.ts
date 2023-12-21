@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-positive-message',
@@ -8,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrl: './positive-message.component.css'
 })
 export class PositiveMessageComponent {
+  selectedItem: string = ''
 
+  @Input()
+  set id(heroId: string) {
+    this.selectedItem = heroId;
+  }
 }
