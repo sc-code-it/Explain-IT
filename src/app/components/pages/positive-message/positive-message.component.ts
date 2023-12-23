@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-positive-message',
@@ -7,11 +7,16 @@ import { Component, Input } from '@angular/core';
   templateUrl: './positive-message.component.html',
   styleUrl: './positive-message.component.css'
 })
-export class PositiveMessageComponent {
+export class PositiveMessageComponent implements OnInit {
   selectedItem: string = ''
 
   @Input()
   set id(heroId: string) {
     this.selectedItem = heroId;
+  }
+
+  ngOnInit(): void {
+      const data = history.state;
+      console.log(data)
   }
 }

@@ -36,7 +36,7 @@
 }
 .holy-grail-grid > .right-sidebar {
   grid-area: right-sidebar;
-  background: var(--negative-info);
+  background: var(--positive-info);
 }
 .holy-grail-grid > .footer {
   grid-area: footer;
