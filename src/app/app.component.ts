@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
+
+import * as cv from "@techstark/opencv-js";
 
 import { HeaderComponent } from './components/ui/header/header.component';
 import { PositiveInfoComponent } from './components/pages/positive-info/positive-info.component';
@@ -21,4 +23,11 @@ import { NegativeInfoComponent } from './components/pages/negative-info/negative
 })
 export class AppComponent {
   title = 'Explain-IT';
+
+  constructor() {
+    setTimeout(() => {
+      (window as any).cv = cv;
+    }, 1000);
+  }
+
 }
