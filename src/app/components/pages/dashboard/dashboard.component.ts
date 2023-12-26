@@ -1,4 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
+import { DashboardService } from './dashboard.service';
+
+export interface Hero {
+  id: number;
+  name: string;
+}
 
 @Component({
   selector: 'app-dashboard',
@@ -7,7 +14,24 @@ import { Component } from '@angular/core';
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css',
 })
-export class DashboardComponent {}
+export class DashboardComponent implements OnInit {
+  config: any;
+
+  constructor(private configService: DashboardService) {}
+
+  ngOnInit(): void {
+    this.showConfig();
+  }
+
+  showConfig() {
+    this.configService.getHeroes().subscribe(
+      (data) => {
+        this.config = data
+        console.log(this.config)
+      }
+    );
+  }
+}
 
 // <video class="video" #liveVideo autoplay controls width="320" height="240"></video>
 // <canvas id="canvasOutput" width="320" height="240"></canvas>
