@@ -7,7 +7,7 @@ export interface CardInfo {
 }
 
 @Component({
-  selector: 'app-card',
+  selector: 'eitCard',
   standalone: true,
   imports: [RouterLink, RouterLinkActive],
   templateUrl: './card.component.html',

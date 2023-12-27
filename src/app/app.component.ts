@@ -5,6 +5,7 @@ import { RouterOutlet } from '@angular/router';
 import * as cv from "@techstark/opencv-js";
 
 import { HeaderComponent } from './components/ui/header/header.component';
+import { SideInfoComponent } from './components/ui/side-info/side-info.component';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,9 @@ import { HeaderComponent } from './components/ui/header/header.component';
   imports: [
     CommonModule,
     RouterOutlet,
+
     HeaderComponent,
+    SideInfoComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
