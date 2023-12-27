@@ -1,6 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
 
 export interface Config {
   heroesUrl: string;
@@ -29,8 +28,4 @@ export class ConfigService {
     return this.http.get<Config>(this.configUrl);
   }
 
-  addHero(hero: Config) {
-    return this.http
-      .post<Config>(this.configUrl, hero, httpOptions)
-  }
 }

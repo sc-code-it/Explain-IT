@@ -1,0 +1,34 @@
+{
+  "boards": [
+    {
+      "boardName": "test",
+      "sections": {
+        "left": ["Common", "Family", "Friends"],
+        "right": ["Food", "Comfort", "Hygiene"]
+      },
+      "section": {
+        "name": "Common",
+        "url": "dashboard",
+        "items": [
+          { "name": "Yes", "Action": "" },
+          { "name": "No", "Action": "" }
+        ]
+      }
+    },
+    {
+      "boardName": "test-2",
+      "sections": {
+        "left": ["Common", "Family", "Friends"],
+        "right": ["Food", "Comfort", "Hygiene"]
+      },
+      "section": {
+        "name": "Common",
+        "url": "dashboard",
+        "items": [
+          { "name": "Yes", "Action": "" },
+          { "name": "No", "Action": "" }
+        ]
+      }
+    }
+  ]
+}
