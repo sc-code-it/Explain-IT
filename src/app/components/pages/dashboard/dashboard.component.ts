@@ -1,38 +1,37 @@
-import { Component, OnInit } from '@angular/core';
-
-import { BoardsService } from '../../../common/service/boards.service';
-
-import { Board, Boards } from '../../../common/interfaces/interfaces';
+import { Component } from '@angular/core';
+import { DropDownComponent } from '../../ui/drop-down/drop-down.component';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [],
+  imports: [DropDownComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css',
 })
-export class DashboardComponent implements OnInit {
-  config: Boards | undefined;
-  selectedBoard: Board | undefined;
+export class DashboardComponent {
 
-  constructor(private boardsService: BoardsService) {}
-
-  ngOnInit(): void {
-    // this.getBoards();
-    this.getBoard('assets/data/base-board.json');
-  }
-
-  getBoards() {
-    this.boardsService.getBoards().subscribe((data) => {
-      this.config = { ...data };
-      console.log(this.config.boards);
-    });
-  }
-
-  getBoard(url: string) {
-    this.boardsService.getBoard(url).subscribe((data) => {
-      this.selectedBoard = { ...data }
-      console.log(this.selectedBoard);
-    })
-  }
 }
+
+// config: Boards | undefined;
+// selectedBoard: Board | undefined;
+
+// constructor(private boardsService: BoardsService) {}
+
+// ngOnInit(): void {
+//   // this.getBoards();
+//   this.getBoard('assets/data/base-board.json');
+// }
+
+// getBoards() {
+//   this.boardsService.getBoards().subscribe((data) => {
+//     this.config = { ...data };
+//     console.log(this.config.boards);
+//   });
+// }
+
+// getBoard(url: string) {
+//   this.boardsService.getBoard(url).subscribe((data) => {
+//     this.selectedBoard = { ...data }
+//     console.log(this.selectedBoard);
+//   })
+// }

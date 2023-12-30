@@ -1,0 +1,79 @@
+<!-- <div
+  [style.--drp-width]="dropdownWidth"
+  class="drop-down"
+  [class.active]="isOpen"
+>
+  <div class="btn" (click)="toggleOpen()" tabindex="0">
+    <span class="text">{{ optionText }}</span>
+    <span class="material-symbols-outlined arrow">arrow_drop_down</span>
+  </div>
+  <div class="content">
+    <ul class="options" role="list">
+      @for (item of optionsList; track item.id; let idx = $index) {
+      <li role="listitem" (click)="optionSelected(item)">
+        <span class="opt-text">{{ item.label }}</span>
+      </li>
+      }
+    </ul>
+  </div>
+</div> -->
+
+<!-- <label for="custom-select">User Type</label>
+<input type="text" id="custom-select">
+<span class="material-symbols-outlined arrow">expand_circle_down</span>
+
+<ul class="custom-select-options">
+  <li>User</li>
+  <li>Author</li>
+  <li>Editor</li>
+  <li>Manager</li>
+  <li>Administrator</li>
+</ul> -->
+
+<div class="sample">
+  <label for="custom-select-input">User Type</label>
+  <div
+    id="custom-select-status"
+    class="hidden-visually"
+    aria-live="polite"
+  ></div>
+  <div
+    class="custom-select"
+    id="myCustomSelect"
+    role="combobox"
+    aria-haspopup="listbox"
+    aria-owns="custom-select-list"
+    [attr.aria-expanded]="!csOpen"
+  >
+    <input
+      type="text"
+      id="custom-select-input"
+      class="select-css"
+      aria-describedby="custom-select-info"
+      aria-autocomplete="both"
+      aria-controls="custom-select-list"
+      (focus)="toggleOpen()"
+      (focusout)="toggleOpen()"
+    />
+    <span id="custom-select-info" class="hidden-visually"
+      >Arrow down for options or start typing to filter.</span
+    >
+    <ul
+      class="custom-select-options hidden-all"
+      id="custom-select-list"
+      [class.hidden-all]="csOpen"
+      role="listbox"
+      aria-label="Select Value"
+    >
+      @for (item of csOptionList; track item.id; let idx = $index) {
+      <li role="option" [tabindex]="idx">
+        {{ item.label }}
+      </li>
+      }
+    </ul>
+  </div>
+</div>
+
+<br />
+
+<!-- https://24ways.org/2019/making-a-better-custom-select-element/ -->

@@ -1,5 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 
+@font-face {
+  font-family: 'Material Symbols Outlined';
+  font-style: normal;
+  src: url('assets/Fonts/MaterialSymbolsOutlined.woff2') format('woff2');
+}
+
 :root {
   --negative-info: hsla(0, 100%, 41%, 0.6);
   --info-1: hsla(43, 100%, 52%, 1);
@@ -36,4 +42,18 @@ input, button, textarea, select {
 
 p, h1, h2, h3, h4, h5, h6 {
   overflow-wrap: break-word;
+}
+
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
 }
