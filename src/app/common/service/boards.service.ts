@@ -1,33 +1,54 @@
-import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Injectable, computed, inject } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
 
-import { Observable, catchError, retry } from 'rxjs';
+import { Observable, catchError, delay, map, of, retry } from 'rxjs';
 
-import { Board, Boards } from '../interfaces/interfaces';
-import { HandleError, HttpErrorHandler } from './http-error-handler.service';
+import { Board, BoardInfo } from '../interfaces/interfaces';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class BoardsService {
+  http = inject(HttpClient);
 
-  boardsUrl = 'assets/data/boards.json'
+  boardsUrl = 'assets/data/test-board.json';
 
-  private handleError: HandleError;
+  boardState = toSignal<BoardInfo>(this.loadBoard(this.boardsUrl));
 
-  constructor(private http: HttpClient, httpErrorHandler: HttpErrorHandler) {
-    this.handleError = httpErrorHandler.createHandleError('HeroesService');
+  private loadBoard(url: string): Observable<BoardInfo> {
+    return this.http.get<BoardInfo>(this.boardsUrl).pipe(
+      delay(5000),
+      retry(3),
+      map((value) => ({ ...value, error: undefined })),
+      catchError((err) =>
+        of({
+          left: undefined,
+          right: undefined,
+          section: undefined,
+          error: err,
+        })
+      )
+    );
   }
 
-  getBoards(): Observable<Boards> {
-    return this.http.get<Boards>(this.boardsUrl).pipe(
-      retry(3), // retry a failed request up to 3 times
-      // catchError(this.handleError('getBoards', []))
+  readonly leftSideInfo = computed(() => this.boardState()?.left);
+  readonly rightSideInfo = computed(() => this.boardState()?.right);
+  readonly sectionInfo = computed(() => this.boardState()?.section);
+
+  getBoard(url?: string): Observable<BoardInfo> {
+    if(url === undefined) {
+      url = this.boardsUrl
+    }
+
+    return this.http.get<BoardInfo>(url).pipe(
+      delay(2000)
     )
-  }
-
-  getBoard(url: string): Observable<Board> {
-    return this.http.get<Board>(url)
+    // return this.http.get<BoardInfo>(url, {
+    //   params: {
+    //     ...(url ? { url: url.toString() } : {}),
+    //   },
+    // })
   }
 
 }

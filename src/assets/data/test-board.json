@@ -1,14 +1,22 @@
 {
-  "sections": {
-    "left": ["Common", "Family", "Friends"],
-    "right": ["Food", "Comfort", "Hygiene"]
-  },
-  "section": {
-    "name": "Common",
-    "url": "dashboard",
-    "items": [
-      { "name": "Yes", "Action": "" },
-      { "name": "No", "Action": "" }
-    ]
-  }
+  "left": ["Common", "Family", "Friends"],
+  "right": ["Food", "Comfort", "Hygiene"],
+  "section": [
+    {
+      "name": "Common",
+      "url": "dashboard",
+      "items": [
+        { "name": "Yes", "Action": "" },
+        { "name": "No", "Action": "" }
+      ]
+    },
+    {
+      "name": "Family",
+      "url": "dashboard",
+      "items": [
+        { "name": "Yes", "Action": "" },
+        { "name": "No", "Action": "" }
+      ]
+    }
+  ]
 }

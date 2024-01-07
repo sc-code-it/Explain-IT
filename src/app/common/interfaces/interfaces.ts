@@ -1,29 +1,26 @@
-export interface Boards {
+export interface BoardDetails {
   boards: Board[];
 }
 
 export interface Board {
   name: string;
-  url:  string;
+  url: string;
 }
 
 export interface BoardInfo {
-  sections: Sections;
-  section:  Section;
+  left: string[] | undefined;
+  right: string[] | undefined;
+  section: BoardSection[] | undefined;
+  error: string | undefined;
 }
 
-export interface Section {
-  name:  string;
-  url:   string;
+export interface BoardSection {
+  name: string;
+  url: string;
   items: Item[];
 }
 
 export interface Item {
-  name:   string;
+  name: string;
   Action: string;
-}
-
-export interface Sections {
-  left:  string[];
-  right: string[];
 }
