@@ -1,1 +1,9 @@
-<p>main works!</p>
+<section class="main">
+  <ul class="todo-list">
+    @for (item of visibleTodos(); track item.id) { 
+      <li>
+        {{ item.text }}
+      </li>
+    }
+  </ul>
+</section>
