@@ -9,6 +9,10 @@ export class TodoService {
   todoSig = signal<TodoInterface[]>([]);
   filterSig = signal<FilterEnum>(FilterEnum.all);
 
+  changeFilter(filterName: FilterEnum): void {
+    this.filterSig.set(filterName)
+  }
+
   addTodo(text: string): void {
     const newTodo: TodoInterface = {
       id: Math.random().toString(16),
