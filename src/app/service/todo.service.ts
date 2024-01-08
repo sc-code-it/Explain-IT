@@ -10,7 +10,7 @@ export class TodoService {
   filterSig = signal<FilterEnum>(FilterEnum.all);
 
   changeFilter(filterName: FilterEnum): void {
-    this.filterSig.set(filterName)
+    this.filterSig.set(filterName);
   }
 
   addTodo(text: string): void {
@@ -20,5 +20,29 @@ export class TodoService {
       isCompleted: false,
     };
     this.todoSig.update((todos) => [...todos, newTodo]);
+  }
+
+  changeTodo(id: string, text: string): void {
+    this.todoSig.update((todos) =>
+      todos.map((todo) => (todo.id === id ? { ...todo, text } : todo))
+    );
+  }
+
+  removeTodo(id: string): void {
+    this.todoSig.update((todos) => todos.filter((todo) => todo.id !== id));
+  }
+
+  toggleTodo(id: string): void {
+    this.todoSig.update((todos) =>
+      todos.map((todo) =>
+        todo.id === id ? { ...todo, isCompleted: !todo.isCompleted } : todo
+      )
+    );
+  }
+
+  toggleAll(isCompleted: boolean): void {
+    this.todoSig.update((todos) =>
+      todos.map((todo) => ({ ...todo, isCompleted }))
+    );
   }
 }
