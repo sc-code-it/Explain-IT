@@ -6,12 +6,13 @@ import { SideInfoComponent } from './components/ui/side-info-eit/side-info.compo
 import { BoardsService } from './common/service-eit/boards.service';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { firstValueFrom } from 'rxjs';
-import { BoardInfo } from './common/interfaces/interfaces';
+import { BoardInfo } from './common/interfaces-eit/interfaces';
+import { TodosComponent } from './components/pages/todos/todos.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, TodosComponent],
+  imports: [RouterOutlet, TodosComponent, HeaderComponent, SideInfoComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
