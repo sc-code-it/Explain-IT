@@ -2,8 +2,8 @@ import { Component, effect, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 
-import { HeaderComponent } from './components/ui/header/header.component';
-import { SideInfoComponent } from './components/ui/side-info/side-info.component';
+import { HeaderComponent } from './components/ui/header-eit/header.component';
+import { SideInfoComponent } from './components/ui/side-info-eit/side-info.component';
 import { BoardsService } from './common/service/boards.service';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { firstValueFrom } from 'rxjs';
