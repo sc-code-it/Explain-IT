@@ -1,3 +1,22 @@
-<div class="app-container">
-  <router-outlet></router-outlet>
+<div class="holy-grail-grid">
+  <eitHeader class="header"></eitHeader>
+  <eitSideInfo class="pos-sidebar"></eitSideInfo>
+
+  
+
+  <ul class="main-content">
+    @for (item of test()?.right; track item; let idx = $index) {
+    <li role="option" [tabindex]="idx">
+      {{ item }}
+    </li>
+    }
+  </ul>
+
+  <!-- <main class="main-content">
+    <router-outlet></router-outlet>
+  </main> -->
+
+  <eitSideInfo class="right-sidebar"></eitSideInfo>
+  <footer class="footer"></footer>
+  
 </div>
