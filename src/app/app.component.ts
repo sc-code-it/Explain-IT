@@ -8,8 +8,19 @@ import { TodosComponent } from './components/pages/todos/todos.component';
   standalone: true,
   imports: [RouterOutlet, TodosComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
 export class AppComponent {
-  title = 'Explain-IT';
+  boardsService = inject(BoardsService);
+
+  test = signal<BoardInfo | undefined>(undefined);
+
+  constructor() {
+    this.search()
+  }
+
+  async search() {
+    const boardData = await firstValueFrom(this.boardsService.getBoard());
+    this.test.set(boardData);
+  }
 }

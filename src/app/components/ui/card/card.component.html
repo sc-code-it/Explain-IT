@@ -1,0 +1,14 @@
+@switch (cardInfo.type) { @case ('p') {
+<div class="card"
+     [routerLink] = "['/messages' , { id: cardInfo.name}]"
+     [state]="{ value: cardInfo.name }"
+     routerLinkActive="activeLink"
+     ariaCurrentWhenActive="page"
+>
+  {{ cardInfo.name }}
+</div>
+} @case ('n') { Case B. } @default { Default case. } }
+
+
+<!-- routerLink="{{ cardData.urlPage }}"
+[state]="{ value: cardData.recordType, info: businessInfo }" -->

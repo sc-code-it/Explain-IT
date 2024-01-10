@@ -1,0 +1,12 @@
+{
+  "boards": [
+    {
+      "name": "test",
+      "url": ""
+    },
+    {
+      "name": "test-2",
+      "url": ""
+    }
+  ]
+}
