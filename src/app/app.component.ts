@@ -4,10 +4,10 @@ import { RouterOutlet } from '@angular/router';
 
 import { HeaderComponent } from './components/ui/header-eit/header.component';
 import { SideInfoComponent } from './components/ui/side-info-eit/side-info.component';
-import { BoardsService } from './common/service/boards.service';
+import { BoardsService } from './common/service-eit/boards.service';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { firstValueFrom } from 'rxjs';
-import { BoardInfo } from './common/interfaces/interfaces';
+import { BoardInfo } from './common/interfaces-eit/interfaces';
 
 @Component({
   selector: 'app-root',

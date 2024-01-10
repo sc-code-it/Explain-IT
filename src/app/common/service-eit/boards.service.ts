@@ -4,7 +4,7 @@ import { toSignal } from '@angular/core/rxjs-interop';
 
 import { Observable, catchError, delay, map, of, retry } from 'rxjs';
 
-import { Board, BoardInfo } from '../interfaces/interfaces';
+import { Board, BoardInfo } from '../interfaces-eit/interfaces';
 
 @Injectable({
   providedIn: 'root',
