@@ -1,7 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { firstValueFrom } from 'rxjs';
 
 import { TodosComponent } from './components/pages/todos/todos.component';
+import { BoardsService } from './common/service/boards.service';
+import { BoardInfo } from './common/interfaces/interfaces';
 
 @Component({
   selector: 'app-root',
